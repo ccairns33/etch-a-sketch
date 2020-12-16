@@ -15,7 +15,7 @@ for (let i = 0; i < nodeBlocks.length; i++){
     blocks.push(nodeBlocks[i]);
 }
 blocks.forEach(block => {
-    //must be array, hus for loop conversion
+    //must be array, thus for loop conversion
     block.addEventListener("mouseover", mouseOver=>{
         block.classList.add("hover"); 
         //adding hover class if mouse is on block
