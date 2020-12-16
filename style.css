@@ -1,11 +1,10 @@
 .wrapper{
     display: grid;
-    justify-content: center;
     width: 100%;
 }
 .container {
     display: grid;
-    
+    justify-self: center;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16,1fr);
     width: 500px;
@@ -18,7 +17,15 @@
 .container .hover{
     background-color: rgb(247, 203, 210);
 }
+
+#rainbow{
+    color: white;
+    background: linear-gradient(to right, red , yellow, rgb(57, 245, 57), cyan, blue, violet);
+    margin-left: 7px;
+    margin-right: 7px;
+}
 .modifications{
+    justify-self: center;
     margin:0;
     padding: 0;
 }
@@ -28,7 +35,7 @@ button{
     font-weight: bold;
     text-align: left;
     height: 30px;
-    background-color: honeydew;
+    background-color: rgb(223, 252, 223);
     color: grey;
     border-radius: 5px;
 
