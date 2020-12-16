@@ -1,9 +1,11 @@
 .wrapper{
-    width: 100%;;
+    display: grid;
+    justify-content: center;
+    width: 100%;
 }
 .container {
     display: grid;
-    justify-content: center;
+    
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16,1fr);
     width: 500px;
@@ -15,4 +17,19 @@
 }
 .container .hover{
     background-color: rgb(247, 203, 210);
+}
+.modifications{
+    margin:0;
+    padding: 0;
+}
+button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+    height: 30px;
+    background-color: honeydew;
+    color: grey;
+    border-radius: 5px;
+
 }
