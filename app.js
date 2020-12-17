@@ -1,7 +1,15 @@
 let container = document.getElementById('container');
 let wrapper = document.getElementById('wrapper').appendChild(container);
-let grid = 16;
 let rainbowClick = false;
+let grid=16; //default value;
+
+function slider(){
+    let slider = document.getElementById("slider").value;
+    grid = parseInt(slider,10);
+    document.getElementById("container").setAttribute("style",`grid-template-columns: repeat(${grid}, 1fr)`);
+    document.getElementById("container").setAttribute("style",`grid-template-rows: repeat(${grid}, 1fr)`);
+
+}
 
 //adding rainbow button
 let rainbow = document.createElement("button");
