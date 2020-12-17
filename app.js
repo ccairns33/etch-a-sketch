@@ -3,15 +3,20 @@ let wrapper = document.getElementById('wrapper').appendChild(container);
 let grid = 16;
 let rainbowClick = false;
 
+//clear button created
 let clearBtn = document.createElement("button");
 clearBtn.title = "Clear";
 clearBtn.innerHTML = "Clear";
 clearBtn.id = "clear";
 document.getElementById("modifications").appendChild(clearBtn);
 
+//clears all the styling if button 'clear' is pressed
 clearBtn.addEventListener("click", fucntion=>{
+    rainbowClick=false;
     blocks.forEach(block =>{
+
         block.classList.remove("hover");
+        block.removeAttribute("style");
     });
 });
 //adding rainbow button
@@ -31,42 +36,36 @@ for (let i = 0; i < grid; i++ ){
     document.getElementById('container').appendChild(gridDiv);
     }
 }
+//turns nodeList into array for use
 let nodeBlocks = document.querySelectorAll(".block");
 let blocks = [];
 for (let i = 0; i < nodeBlocks.length; i++){
     //must be array, thus for loop conversion
     blocks.push(nodeBlocks[i]);
 }
-rainbow.addEventListener("click", fucntion=>{
-    rainbowClick = true;    
-   
-});
 
 function draw(){
-//default coloring action when mousing over
-    console.log(rainbowClick);
-    //array necessary
-    
-        blocks.forEach(block => {
-            if (rainbowClick){
-            //console.log("rgb("+rgb.join(",")+")");
-            block.addEventListener("mouseover", mouseOver =>{
-                let rgb = [Math.floor(Math.random() *256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)]
-                //rbg array with 3 random numbers up to 256
-                block.style.backgroundColor = "rgb("+rgb.join(",")+")";
-            });
-            }
-            else {
-        
-                block.addEventListener("mouseover", mouseOver=>{
-                block.classList.add("hover"); 
-                //adding hover class if mouse is on block
-                // to leave a pixelated trail
-        
-                });
-            }
+//sets varable to true if button clicked
+    rainbow.addEventListener("click", fucntion=>{
+    rainbowClick = true;    
+   
     });
-
+    
+        blocks.forEach(block => {          
+                
+            block.addEventListener("mouseover", mouseOver=>{
+                if (rainbowClick){
+                    // if rainbow has been clicked, add rainbow
+                    let rgb = [Math.floor(Math.random() *256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)]
+                    //rbg array with 3 random numbers up to 256
+                    block.style.backgroundColor = "rgb("+rgb.join(",")+")";
+                }
+                else{
+                    block.classList.add("hover"); 
+                    //adding hover class if mouse is on block
+                    // to leave a pixelated trail
+                }
+            });   
+        });
 }
-
 draw();
