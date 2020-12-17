@@ -3,12 +3,20 @@ let wrapper = document.getElementById('wrapper').appendChild(container);
 let grid = 16;
 let rainbowClick = false;
 
+//adding rainbow button
+let rainbow = document.createElement("button");
+rainbow.title = "Rainbow color";
+rainbow.innerHTML = "Rainbow";
+rainbow.id = "rainbow";
+document.getElementById("modifications").appendChild(rainbow);
+
 //clear button created
 let clearBtn = document.createElement("button");
 clearBtn.title = "Clear";
 clearBtn.innerHTML = "Clear";
 clearBtn.id = "clear";
 document.getElementById("modifications").appendChild(clearBtn);
+
 
 //clears all the styling if button 'clear' is pressed
 clearBtn.addEventListener("click", fucntion=>{
@@ -19,12 +27,7 @@ clearBtn.addEventListener("click", fucntion=>{
         block.removeAttribute("style");
     });
 });
-//adding rainbow button
-let rainbow = document.createElement("button");
-rainbow.title = "Rainbow color";
-rainbow.innerHTML = "Rainbow";
-rainbow.id = "rainbow";
-document.getElementById("modifications").appendChild(rainbow);
+
 
 
 //creating grid
@@ -45,9 +48,14 @@ for (let i = 0; i < nodeBlocks.length; i++){
 }
 
 function draw(){
-//sets varable to true if button clicked
+//sets varable to true if button clicked then is able to turn it rainbow
     rainbow.addEventListener("click", fucntion=>{
-    rainbowClick = true;    
+        if (!rainbowClick){
+            rainbowClick = true;  
+        }
+        else {
+            rainbowClick=false;
+        }  
    
     });
     

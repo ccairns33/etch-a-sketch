@@ -1,6 +1,11 @@
+body{
+    margin:0;
+}
 .wrapper{
     display: grid;
     width: 100%;
+    background-color: linen;
+    margin: 0;
 }
 .container {
     display: grid;
@@ -11,7 +16,7 @@
     height: 500px;
 }
 .container div{
-    background-color: aquamarine;
+    background-color: rgb(153, 248, 217);
     border: 1px solid azure;
 }
 .container .hover{
@@ -19,15 +24,38 @@
 }
 
 #rainbow{
-    color: white;
+    color: rgb(255, 255, 255);
     background: linear-gradient(to right, red , yellow, rgb(57, 245, 57), cyan, blue, violet);
     margin-left: 7px;
     margin-right: 7px;
 }
 .modifications{
+    display: flex;
+    flex-direction: row-reverse;
     justify-self: center;
     margin:0;
     padding: 0;
+
+}
+p{
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: bold;
+    color: rgb(252, 153, 168);
+
+
+}
+h1{
+    justify-self: center;
+    margin-bottom: 10px;
+    color: rgb(255, 144, 160);
+    text-shadow: 2px 2px;
+
+}
+input{
+    margin: 0;
+    padding-bottom:7px;
+    background-color: lightpink;
 }
 button{
     margin-top: 10px;
@@ -35,8 +63,13 @@ button{
     font-weight: bold;
     text-align: left;
     height: 30px;
-    background-color: rgb(223, 252, 223);
-    color: grey;
+    background-color:  rgb(173, 250, 224);
+    border: 2px solid rgb(247, 193, 193);
+    color: rgb(252, 170, 170);
     border-radius: 5px;
+
+}
+button:hover{
+    box-shadow: 0 0 7px #9ecaed;
 
 }
