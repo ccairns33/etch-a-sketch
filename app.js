@@ -6,16 +6,16 @@ let grid=16; //default value;
 function slider(){
     let slider = document.getElementById("slider").value;
     grid = parseInt(slider,10);
-    document.getElementById("container").setAttribute("style",`grid-template-columns: repeat(${grid}, 1fr)`);
-    document.getElementById("container").setAttribute("style",`grid-template-rows: repeat(${grid}, 1fr)`);
-
+    console.log(grid);
+    container.style.gridTemplateColumns = `repeat(${grid}, 2fr)`;
+    container.style.gridTemplateRows = `repeat(${grid}, 2fr)`;
 }
 
 //adding rainbow button
 let rainbow = document.createElement("button");
 rainbow.title = "Rainbow color";
 rainbow.innerHTML = "Rainbow";
-rainbow.id = "rainbow";
+rainbow.id = "rainbow"; 
 document.getElementById("modifications").appendChild(rainbow);
 
 //clear button created
@@ -36,16 +36,17 @@ clearBtn.addEventListener("click", fucntion=>{
     });
 });
 
-
-
+container.style.gridTemplateColumns = `repeat(${grid}, 2fr)`;
+container.style.gridTemplateRows = `repeat(${grid}, 2fr)`;
 //creating grid
 for (let i = 0; i < grid; i++ ){
-    for (let j = 0; j < grid; j++){
+   for(let j = 0; j< grid; j++){
     let gridDiv = document.createElement("div");
     gridDiv.id = "block";
     gridDiv.className = "block";
+    
     document.getElementById('container').appendChild(gridDiv);
-    }
+   }
 }
 //turns nodeList into array for use
 let nodeBlocks = document.querySelectorAll(".block");
