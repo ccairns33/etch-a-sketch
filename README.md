@@ -23,9 +23,9 @@
 
   </p>
 </div>
-
+ <p>
     Etch a Sketch is created utilizing Javascript DOM manipulation in order to detect the user's cursor over the sketch pad.
-
+</p>
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
